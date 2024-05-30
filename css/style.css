@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto";
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    /* General clr palette */
+    --bcg-clr-header: red;
+    --bcg-clr-nav: rgba(229, 80, 57,1.0);
+    --bcg-clr-main: yellow;
+    --bcg-clr-sidecontent: green;
+    /* Nav clr palette */
+    --txt-clr-nav-items: rgba(255, 255, 255, 100%); 
+    --txt-clr-nav-hover: rgba(96, 163, 188,1.0);
+    
+
+    /* Gaps, margins & paddings */
+
+
+    /* Nav */
+    --gap-nav-rows: 2rem;
+    --margin-list-btm: .5rem;
+    --margin-list-left: 1rem;
+
+
+    /* fonts */
+
+
+    /* Nav */
+    --logo-font-size: 1.4rem;
+    --logo-font: "Poppins", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template: 200px 1fr/ minmax(13.6rem,18.8rem) 3fr 1fr;
+    grid-template-areas: 
+        "nav header header"
+        "nav main side-content";
+    gap: 10px 15px;
+}
+
+body>* {
+    border: 1px solid black;
+    background-color: var(--_bcg-clr, red);
+
+}
+
+
+header {
+    --_bcg-clr: var(--bcg-clr-header);
+    grid-area: header;
+
+}
+
+nav {
+    --_bcg-clr: var(--bcg-clr-nav);
+    grid-area: nav;
+    color: var(--_txt-clr, white);
+}
+
+
+main {
+    --_bcg-clr: var(--bcg-clr-main);
+    grid-area: main;
+}
+
+.side-content {
+    --_bcg-clr: var(--bcg-clr-sidecontent);
+    grid-area: side-content;
+}
+
+
+/* General styling */
+
+.logo {
+    font-family: var(--logo-font);
+    text-transform: uppercase;
+    font-size: var(--logo-font-size);
+    font-weight: 600;
+}
+
+.grid-rows {
+    display: grid;
+    gap: var(--gap-nav-rows);
+}
+
+.nav-hover > * {
+    cursor: pointer;
+    color: var(--txt-clr-nav-items);
+    transition: all .5s ease;
+}
+
+.nav-hover:hover > * {
+    transform: scale(1.1) ;
+    color: var(--txt-clr-nav-hover);
+}
+
+.nav-list-wrapper>* {
+    margin-bottom: var(--margin-list-btm);
+    margin-left: var(--margin-list-left);
+}
+
+.nav-icon {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: .6rem;
+    align-items: center;
+}
